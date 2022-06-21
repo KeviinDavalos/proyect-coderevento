@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Acomodamiento de area */
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+}
+/* Grilla general */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3,auto);
+}
+
+
+/* ---- Codigo Global ----- */
+/* Header */
+/* header{
+    background-color: rgb(47, 79, 79);
+    height: auto;
+    padding: 1.2em;
+    font-size: medium;
+} */
+
+/* nav{
+    display: flex;
+    flex-direction: column;
+} */
+
+.colorHeader{
+    background-color: #0D1B1E;
+}
+
+nav ul li{
+    list-style: none;
+    align-items: center;
+    margin: 8px 0px;
+}
+nav ul li a{
+    text-decoration: none;
+    /* color: white; */
+    padding: 10px 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav ul li a:hover{
+    background-color: #BBD6D6;
+    color:black;
+    /* border-radius: 0.93em; */
+} 
+
+/* Main */
+main{
+    background-color: cadetblue;
+    height: auto;
+    padding: 2em;
+}
+h2, h4, .centroText{
+    text-align: center;
+}
+.centroText{
+    font-size: 20px;
+}
+h2,h4,.centroText, p{
+    margin-bottom: 10px;
+}
+h2, h4, p{
+    font-family:'Signika', sans-serif;
+}
+h2, h4{
+    font-size: 30px;
+}
+.subtitHistoria{
+    font-size: 23px;
+}
+.fuente-historia-h3{
+    font-family:'Signika', sans-serif;
+}
+
+.container-servicioInfo{
+    padding: 3%;
+}
+.servicioInfo{
+    background-color: white;
+    /* width: 100%; */
+    /* height: auto; */
+    /* margin: 0.5em; */
+    margin: 1em 0;
+    border-radius: 0.7em;
+    transition: all 0.4s;
+}
+.servicioInfo:hover{
+    transform: scale(1.1);
+}
+.servicioImg img, .container-img-servicio img{
+    /* width: 50%; */
+    /* width: 16em; */
+    width: 100%;
+}
+
+.button{
+    background-color: rgb(42, 92, 94);
+    text-decoration: none;
+    color: white;
+    padding: 10px 23px;
+    margin: 6px 0px;
+    border-radius: 10px;
+}
+.boton-flex{
+    display: flex;
+    justify-content: flex-end;
+}
+iframe{
+    width: 100%;
+}
+/* .container-img-servicio img{
+    height: 200px;
+} */
+/* .container-flex-galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+} */
+.container-flex-galeria img{
+    width: 100%;
+    transition: all 0.4s;
+}
+.container-flex-galeria img:hover{
+    transform: scale(1.1);
+}
+.container-flex-galeria{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input, label, textarea {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+textarea{
+    width: 100%;
+    height: 98px;
+}
+.imgHistoria img{
+    width: 100%;
+}
+.container-flex-historia-info{
+    border: 3px solid white;
+    padding: 3%;
+    margin: 1em 0;
+}
+
+/* pie de pagina */
+footer{
+    background-color: lightgray;
+    height: auto;
+    padding: 2.2em;
+    text-align: center;
+}
+.container-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+/* Mobile */
+@media (min-width: 500px){
+    
+    nav ul {
+    display: flex;
+    flex-direction: row;
+    }
+
+    main {
+       padding: 3.5em;
+    }
+    .container-img-servicio img{
+        height: 230px;
+    }
+
+    .container-flex-galeria img{
+        width: 20em;
+    }
+
+    .container-flex-galeria{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    textarea{
+        width: 65%;
+        height: 98px;
+    }
+}
+/* Tablet */
+@media (min-width: 768px){
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: repeat(3,auto);
+    }
+    header{
+        font-size: larger;
+    } 
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: right;
+    }
+    main{
+        padding: 4.5em;
+    }
+    .servicioInfo{
+        width: 40%;
+        /* width: 23.1em; */
+    }
+    .container-flex-servicio{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    
+    .galeriaImg img{
+        width: 40%;
+    }
+    .container-flex-galeria img{
+        width: 20em;
+    }
+    .container-flex-galeria{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .imgHistoria img{
+        width: 18em;
+        height: 100%;
+    }
+    .imgHistoria{
+        padding: 1%;
+    }
+    .container-flex-historia-info{
+        border: 3px solid white;
+        /* padding: 3%; */
+        padding: 0;
+        margin: 1em 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .historiaInfo{
+        display:flex;
+        flex-direction: column;
+        padding: 3% 1%;
+    }
+}
+/* Desktop */
+@media (min-width: 1024px){
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: repeat(3,auto);
+    }
+    main{
+        padding: 5.5em;
+    }
+    .servicioInfo{
+        width: 30%;
+        /* width: 23.1em; */
+    }
+    .container-img-servicio img{
+        height: 250px;
+    }
+    
+    iframe{
+        height: 30em;
+    }
+    
+    .container-flex-galeria img{
+        width: 20.7em;
+        /* width: 18.75rem;
+        height: 12.5rem; */
+        
+    }
+
+    .container-flex-galeria{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    textarea{
+        width: 396px;
+        height: 98px;
+    }
+    .imgHistoria img{
+        width: 20em;
+        height: 100%;
+    }
+    .imgHistoria{
+        padding: 1%;
+    }
+    .container-flex-historia-info{
+        border: 3px solid white;
+        /* padding: 3%; */
+        padding: 0;
+        margin: 1em 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .historiaInfo{
+        display:flex;
+        flex-direction: column;
+        padding: 3% 1%;
+    }
+}
